@@ -1,24 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { Employees } from "components/employees";
+import { Jobs } from "components/jobs";
+import { Layout } from "antd";
+const { Header, Sider, Content } = Layout;
+
+const headerStyle = {
+  textAlign: "center",
+  color: "#fff",
+  height: 64,
+  paddingInline: 48,
+  lineHeight: "64px",
+  background: "#81b8dd",
+};
+const contentStyle = {
+  textAlign: "center",
+  minHeight: 120,
+  lineHeight: "120px",
+  color: "#fff",
+  background: "#fff",
+};
+const siderStyle = {
+  display: "flex",
+  justifyContent: "center",
+  textAlign: "center",
+  lineHeight: "120px",
+  color: "#fff",
+  overflow: "auto",
+  backgroundColor: "eee",
+  background: "#fff",
+  borderRight: "1px solid #eee",
+};
+
+const layoutStyle = {
+  overflow: "hidden",
+  width: "100%",
+  maxWidth: "100%",
+  height: "100vh",
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout style={layoutStyle}>
+      <Sider width={"350px"} style={siderStyle}>
+        <Jobs />
+      </Sider>
+      <Layout>
+        <Header style={headerStyle} />
+        <Content style={contentStyle}>
+          <Employees />
+        </Content>
+      </Layout>
+    </Layout>
   );
 }
 
