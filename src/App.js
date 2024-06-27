@@ -17,6 +17,8 @@ const contentStyle = {
   lineHeight: "120px",
   color: "#fff",
   background: "#fff",
+  overflow: "auto",
+  padding: "1rem 0.5rem",
 };
 const siderStyle = {
   display: "flex",

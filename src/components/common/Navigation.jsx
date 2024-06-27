@@ -1,5 +1,5 @@
 import { Spin } from "antd";
-import { Card } from "antd";
+import { NavigationItem } from "./NavigationItem";
 
 export function Navigation({ loading, services }) {
   return (
@@ -16,17 +16,7 @@ export function Navigation({ loading, services }) {
       ) : (
         services.map(({ id, jobId, title }) => {
           if (title) {
-            return (
-              <Card
-                type="inner"
-                key={id}
-                style={{
-                  width: "300px",
-                }}
-              >
-                {title}
-              </Card>
-            );
+            return <NavigationItem key={id} jobId={jobId} title={title} />;
           }
 
           return null;
